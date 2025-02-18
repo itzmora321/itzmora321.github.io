@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printopia - Iniciar Sesión</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- Custom Fonts and Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: url('images/hero-bg.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .hero_area {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar-brand {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 15px;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: flip-scale-up-hor 0.3s both;
+    }
+
+    .form-container h2 {
+      color: #203247;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-container p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #203247;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background-color: #203247;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #1a2730;
+    }
+
+    .toggle-btn {
+      background-color: #203247;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background-color: #1a2730;
+    }
+
+    .footer_section {
+      width: 100%;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 1rem 0;
+      position: absolute;
+      bottom: 0;
+    }
+
+    @keyframes flip-scale-up-hor {
+      0% {
+        transform: scale(0.5) rotateX(90deg);
+      }
+      50% {
+        transform: scale(1.1) rotateX(-10deg);
+      }
+      100% {
+        transform: scale(1) rotateX(0deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <header class="header_section">
+      <a class="navbar-brand" href="index.html">
+        <span>Printopia</span>
+      </a>
+    </header>
+
+    <div class="form-container" id="form-container">
+      <h2 id="form-title">Iniciar Sesión</h2>
+
+      <form id="login-form" class="flip-scale-up-hor">
+        <p>Por favor, ingresa tus datos</p>
+        <input type="text" id="username" placeholder="Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+
+      <form id="register-form" style="display: none;">
+  <p>Crea tu cuenta</p>
+  <input type="text" id="new-username" placeholder="Usuario" required>
+  <input type="password" id="new-password" placeholder="Contraseña" required>
+  <input type="password" id="confirm-password" placeholder="Confirmar Contraseña" required>
+  <button type="submit">Registrarse</button>
+</form>
+
+      <button id="toggle-form-btn" class="toggle-btn">¿No tienes cuenta? ¡Regístrate!</button>
+    </div>
+  </div>
+
+  <footer class="footer_section">
+    <div>
+      <p>&copy; <span id="displayYear">2024</span> All Rights Reserved By Printopia</p>
+      <a href="https://www.privacypolicies.com/live/dc626389-f301-44a2-a782-5228021a6131">Política de Privacidad</a> | 
+      <a href="https://www.privacypolicies.com/live/c1eeb355-11fa-41f5-95b3-97f54393a78e">Términos de Servicio</a>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-form-btn");
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+    const formTitle = document.getElementById("form-title");
+
+    toggleBtn.addEventListener("click", () => {
+      if (loginForm.style.display === "none") {
+        registerForm.classList.remove("flip-scale-up-hor");
+        loginForm.classList.add("flip-scale-up-hor");
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+        formTitle.innerText = "Iniciar Sesión";
+        toggleBtn.innerText = "¿No tienes cuenta? ¡Regístrate!";
+      } else {
+        loginForm.classList.remove("flip-scale-up-hor");
+        registerForm.classList.add("flip-scale-up-hor");
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+        formTitle.innerText = "Registrarse";
+        toggleBtn.innerText = "¿Ya tienes cuenta? ¡Inicia Sesión!";
+      }
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Función para manejar el formulario de login
+    $("#login-form").submit(function(event) {
+      event.preventDefault();
+
+      var username = $("#username").val();
+      var password = $("#password").val();
+
+      $.ajax({
+        url: 'auth.php',
+        type: 'POST',
+        data: {
+          action: 'login',
+          username: username,
+          password: password
+        },
+        success: function(response) {
+          console.log('Respuesta del servidor:', response); // Muestra la respuesta
+          alert(response); 
+          if (response === "Inicio de sesión exitoso.") {
+            window.location.href = "index.html"; // Redirige a index.html
+          }
+        },
+        error: function(xhr, status, error) {
+          console.error('Error en la solicitud:', error);
+          alert("Hubo un error en la solicitud. Intenta de nuevo.");
+        }
+      });
+    });
+
+    // Función para manejar el formulario de registro
+    $("#register-form").submit(function(event) {
+      event.preventDefault();
+
+      var username = $("#new-username").val();
+      var password = $("#new-password").val();
+      var confirmPassword = $("#confirm-password").val();
+
+      $.ajax({
+        url: 'auth.php',
+        type: 'POST',
+        data: {
+          action: 'register',
+          username: username,
+          password: password,
+          confirm_password: confirmPassword
+        },
+        success: function(response) {
+          console.log('Respuesta del servidor:', response); // Muestra la respuesta
+          alert(response); 
+          if (response === "Usuario registrado con éxito.") {
+            window.location.href = "index.html"; // Redirige a index.html
+          }
+        },
+        error: function(xhr, status, error) {
+          console.error('Error en la solicitud:', error);
+          alert("Hubo un error en la solicitud. Intenta de nuevo.");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
