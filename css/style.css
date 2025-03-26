@@ -511,6 +511,18 @@ a:focus {
   background-color: #080d12;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .shop_section {
   background-color: #3fc1c9;
 }
@@ -914,3 +926,95 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+
+.about_section {
+  padding: 45px 0;
+}
+
+.about_section .imagenes_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;  /* Añadimos espacio entre las imágenes */
+  margin: 0 auto;
+  max-width: 1200px;  /* Para no hacer la sección demasiado ancha */
+}
+
+.about_section .imagen_item {
+  width: 48%;  /* Deja un espacio entre las imágenes */
+  border-radius: 10px;  /* Bordes redondeados */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about_section .imagen_item img {
+  width: 100%;  /* Ajusta la imagen al contenedor */
+  height: auto;  /* Mantiene la proporción de la imagen */
+  display: block;
+  object-fit: cover;  /* La imagen cubrirá todo el espacio sin distorsionarse */
+  transition: transform 0.3s ease-in-out;
+}
+
+.about_section .imagen_item:hover img {
+  transform: scale(1.1);  /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+.about_section .imagen_item h3 {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}.about_section {
+  padding: 45px 0;
+}
+
+.about_section .imagenes_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;  /* Espacio entre imágenes */
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.about_section .imagen_item {
+  width: 48%;  /* Deja espacio entre las imágenes */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;  /* Para manejar el título sobre la imagen */
+  transition: transform 0.3s ease-in-out;
+}
+
+.about_section .imagen_item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about_section .imagen_item:hover img {
+  transform: scale(1.1);  /* La imagen se agranda en hover */
+}
+
+.about_section .imagen_item h3 {
+  position: absolute;
+  bottom: 15px;  /* Coloca el título en la parte inferior de la imagen */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);  /* Fondo oscuro semitransparente para mejor contraste */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.about_section .imagen_item:hover h3 {
+  background-color: rgba(0, 0, 0, 0.7);  /* Oscurece un poco el fondo al hacer hover */
+}
