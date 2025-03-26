@@ -927,6 +927,7 @@ a:focus {
 }
 /*# sourceMappingURL=style.css.map */
 
+/*IMAGENES*/
 
 .about_section {
   padding: 45px 0;
@@ -1018,3 +1019,67 @@ a:focus {
 .about_section .imagen_item:hover h3 {
   background-color: rgba(0, 0, 0, 0.7);  /* Oscurece un poco el fondo al hacer hover */
 }
+
+/*FIN IMAGENES*/
+
+/*AUDIO*/
+
+/* Estilos para la sección del reproductor de audio */
+.audio-section {
+  background-color: #ffffff; /* Color de fondo */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+  max-width: 600px; /* Tamaño máximo para que no crezca demasiado */
+  width: 100%; /* Se ajusta al contenedor */
+}
+
+/* Estilo para el reproductor de audio */
+.audio-player {
+  width: 100%; /* Ocupa todo el contenedor */
+  height: 50px; /* Altura del reproductor */
+  border-radius: 10px; /* Bordes redondeados */
+  outline: none; /* Sin contorno */
+}
+
+/* Estilos de los controles */
+.audio-player::-webkit-media-controls-panel {
+  background-color: #3fc1c9; /* Fondo del panel de controles */
+  border-radius: 10px;
+}
+
+.audio-player::-webkit-media-controls-play-button {
+  background-color: #ffffff; /* Color del botón de play */
+  border-radius: 50%;
+}
+
+.audio-player::-webkit-media-controls-volume-slider {
+  background-color: #3fc1c9; /* Color del control de volumen */
+  height: 10px;
+}
+
+.audio-player::-webkit-media-controls-play-button:hover {
+  background-color: #203247; /* Cambio de color al pasar el mouse */
+}
+
+.audio-player::-webkit-media-controls-volume-slider:hover {
+  background-color: #3fc1c9; /* Cambio de color al pasar el mouse */
+}
+
+.audio-player::-webkit-media-controls-mute-button {
+  background-color: #ffffff; /* Color del botón de silenciar */
+  border-radius: 50%;
+}
+
+.audio-player::-webkit-media-controls-mute-button:hover {
+  background-color: #203247; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos para el título de la sección */
+.audio-section h2 {
+  color: #ffffff; /* Color del título */
+  font-size: 24px; /* Tamaño del título */
+  margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+/*FIN AUDIO*/
